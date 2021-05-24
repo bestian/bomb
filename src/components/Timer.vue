@@ -1,7 +1,5 @@
 <template>
-  <div class="timer">
-  {{hh}}小时{{mm}}分钟{{ss}}秒钟
-  </div>
+  <div class="timer">{{ hh }}小時{{ mm }}分鐘{{ ss }}秒鐘</div>
 </template>
 
 <script>
@@ -48,5 +46,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

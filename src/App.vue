@@ -2,39 +2,51 @@
   <div id="app">
     <div class="layout">
       <div class="main">
-        <mine-table :level="level" :rows="rows" :cell-height="cellHeight" :cell-width="cellWidth" :cols="columns"></mine-table>
-        <hr>
+        <mine-table
+          :level="level"
+          :rows="rows"
+          :cell-height="cellHeight"
+          :cell-width="cellWidth"
+          :cols="columns"
+        ></mine-table>
+        <hr />
         <timer></timer>
       </div>
       <div class="aside">
         <div class="block">
-          <span class="demonstration">难度：{{getLevelLable}}</span>
+          <span class="demonstration">難度：{{ getLevelLable }}</span>
           <el-slider show-stops :min="1" :max="3" v-model="level"></el-slider>
         </div>
-        <hr>
+        <hr />
         <div class="block">
-          <span class="demonstration">列数：{{columns}}</span>
+          <span class="demonstration">列數：{{ columns }}</span>
           <el-slider :min="5" v-model="columns"></el-slider>
         </div>
         <div class="block">
-          <span class="demonstration">行数：{{rows}}</span>
+          <span class="demonstration">行數：{{ rows }}</span>
           <el-slider :min="5" v-model="rows"></el-slider>
         </div>
-        <hr>
-        <el-switch style="display: block" v-model="isCellSync" active-color="#13ce66" inactive-color="#ff4949" active-text="单元格宽高同步">
+        <hr />
+        <el-switch
+          style="display: block"
+          v-model="isCellSync"
+          active-color="#13ce66"
+          inactive-color="#ff4949"
+          active-text="單元格寬高同步"
+        >
         </el-switch>
-        <hr>
+        <hr />
         <div class="block">
-          <span class="demonstration">单元格宽：{{cellWidth}}</span>
+          <span class="demonstration">單元格寬：{{ cellWidth }}</span>
           <el-slider :min="1" v-model="cellWidth"></el-slider>
         </div>
         <div class="block">
-          <span class="demonstration">单元格高度：{{cellHeight}}</span>
+          <span class="demonstration">單元格高度：{{ cellHeight }}</span>
           <el-slider :min="1" v-model="cellHeight"></el-slider>
         </div>
-        <hr>
-        <el-button @click="reset"  type="danger">重置</el-button>
-      </div> 
+        <hr />
+        <el-button @click="reset" type="danger">重置</el-button>
+      </div>
     </div>
     <click-sound eventname="click-cell" source="a.mp3"></click-sound>
     <click-sound eventname="bomb" source="b.mp3"></click-sound>
@@ -65,8 +77,8 @@ export default {
   methods: {
     reset() {
       // this.$message.confir
-      this.$confirm("确认是否要重置?", "提示", {
-        confirmButtonText: "确定",
+      this.$confirm("確認是否要重置?", "提示", {
+        confirmButtonText: "確定",
         cancelButtonText: "取消",
         type: "warning"
       })
@@ -80,13 +92,13 @@ export default {
     getLevelLable() {
       switch (this.level) {
         case 1:
-          return "简单";
+          return "簡單";
         case 2:
           return "中级";
         case 3:
           return "高级";
         default:
-          return "简单";
+          return "簡單";
       }
     }
   },
